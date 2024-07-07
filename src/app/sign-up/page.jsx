@@ -14,12 +14,12 @@ const SignupSchema = Yup.object().shape({   //copying from validation formik
 
   email: Yup.string().email('Invalid email').required('Required'),
   password: Yup.string().required('Password is Required')
-  .matches(/[a-z]/, 'Password must contain at least one lowercase letter')
-  .matches(/[A-Z]/, 'Password must contain at least one uppercase letter')
-  .matches(/[0-9]/, 'Password must contain at least one number')
-  .matches(/\W/, 'Password must contain at least one special character'),
-confirmPassword: Yup.string().required('Confirm Password is Required')
-  .oneOf([Yup.ref('password'), null], 'Passwords must match')
+    .matches(/[a-z]/, 'Password must contain at least one lowercase letter')
+    .matches(/[A-Z]/, 'Password must contain at least one uppercase letter')
+    .matches(/[0-9]/, 'Password must contain at least one number')
+    .matches(/\W/, 'Password must contain at least one special character'),
+  confirmPassword: Yup.string().required('Confirm Password is Required')
+    .oneOf([Yup.ref('password'), null], 'Passwords must match')
 
 });
 
@@ -35,19 +35,19 @@ const Signup = () => {
 
     onSubmit: (values, { resetForm }) => {
       console.log(values);
-     axios.post('http://localhost:5000/user/add', values)     //conecting backend with frontend  //value bhejna h isliye value
-     .then((result) => {         //using thenc for reading reponse kuki uper rqst kia h
-      console.log(result.status);  //200,500
-      toast.success('user Resister successfully')
-      resetForm(
+      axios.post('http://localhost:5000/user/add', values)     //conecting backend with frontend  //value bhejna h isliye value
+        .then((result) => {         //using thenc for reading reponse kuki uper rqst kia h
+          console.log(result.status);  //200,500
+          toast.success('user Resister successfully')
+          resetForm(
 
-        
-      )
-     }).catch((err) => {
-      console.log(err);
-      toast.error('user Resistration failed')
-      
-     });
+
+          )
+        }).catch((err) => {
+          console.log(err);
+          toast.error('user Resistration failed')
+
+        });
     },
     validationSchema: SignupSchema  // must needed
   })

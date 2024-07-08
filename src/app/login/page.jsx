@@ -51,6 +51,10 @@ const Login = () => {
     });
 
     return (
+        <div className=''>
+      <div>
+        <video style={{ position: 'absolute', top: 0, zIndex: -2, width: '100%', height: 'cover' }} src="wall.mp4" autoPlay loop muted></video>
+      </div>
         <div className='max-w-[500px] mx-auto my-20'>
             <div className="mt-7 bg-white border border-gray-200 rounded-xl shadow-sm dark:bg-neutral-900 dark:border-neutral-700">
                 <div className="p-4 sm:p-7">
@@ -62,7 +66,7 @@ const Login = () => {
                             Don't have an account yet?
                             <a
                                 className="text-blue-600 decoration-2 hover:underline font-medium dark:text-green-500"
-                                href="../examples/html/signup.html"
+                                href="/sign-up"
                             >
                                 Sign up here
                             </a>
@@ -214,6 +218,7 @@ const Login = () => {
                     </div>
                 </div>
             </div>
+        </div>
         </div>
     )
 }

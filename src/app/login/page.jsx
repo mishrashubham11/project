@@ -5,6 +5,7 @@ import axios from 'axios';
 import toast from 'react-hot-toast';
 import { useRouter } from 'next/navigation';
 import useAppContext from '@/context/AppContext';
+import Link from 'next/link';
 const Login = () => {
 
     const router = useRouter();
@@ -64,12 +65,12 @@ const Login = () => {
                         </h1>
                         <p className="mt-2 text-sm text-gray-600 dark:text-neutral-400">
                             Don't have an account yet?
-                            <a
+                            <Link
                                 className="text-blue-600 decoration-2 hover:underline font-medium dark:text-green-500"
                                 href="/sign-up"
                             >
                                 Sign up here
-                            </a>
+                            </Link>
                         </p>
                     </div>
                     <div className="mt-5">

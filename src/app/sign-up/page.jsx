@@ -1,6 +1,7 @@
 'use client';  // client side
 import axios from 'axios';  //niche onsubmit ke axios chalayenge apne app ye import ho jayega
 import { useFormik } from 'formik'
+import Link from 'next/link';
 import React from 'react'
 import toast from 'react-hot-toast';
 import * as Yup from 'yup';  // import yup from formik
@@ -67,12 +68,12 @@ const Signup = () => {
               </h1>
               <p className="mt-2 text-sm text-gray-600 dark:text-neutral-400">
                 Already have an account?
-                <a
+                <Link
                   className="text-blue-600 decoration-2 hover:underline font-medium dark:text-green-500"
                   href="/login"
                 >
                   Sign in here
-                </a>
+                </Link>
               </p>
             </div>
             <div className="mt-5">
